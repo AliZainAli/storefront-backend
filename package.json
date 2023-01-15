@@ -2,9 +2,9 @@
   "name": "storefront-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon src/index.ts",
+    "start": "nodemon src/server.ts",
     "testdb-reset": "db-migrate reset --config ./database.json --e test",
     "testdb-up": "db-migrate --config ./database.json --e test up",
     "tsc": "tsc",

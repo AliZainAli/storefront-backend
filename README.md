@@ -1,58 +1,59 @@
-# API Requirements
+# Important Notes:
 
-The company stakeholders want to create an online storefront to showcase their great product ideas. Users need to be able to browse an index of all products, see the specifics of a single product, and add products to an order that they can view in a cart page. You have been tasked with building the API that will support this application, and your coworker is building the frontend.
+there is a folder postman_data which contains postman collection file which you can import and use directly  
+create environment in postman with a token variable (I import this variable in required requests)  
 
-These are the notes from a meeting with the frontend developer that describe what endpoints the API needs to supply, as well as data shapes the frontend and backend have agreed meet the requirements of the application.
+## API Endpoints  
 
-## API Endpoints
+#### Products  
 
-#### Products
+- /products [GET]       (index)
+- /products/id [GET]    (show)
+- /products [POST]      (Create) (requires Admin Token)
+- /products/id [PATCH]   (update) (requires Admin Token)
+- /products/id [DELETE]   (delete) (requires Admin Token)
 
-- Index /products [GET]
-- Show (args: product id) /products/id [GET]
-- Create (args: Product)[token required] /products [POST]
-- [OPTIONAL] Top 5 most popular products
-- [OPTIONAL] Products by category (args: product category)
+#### Users  
 
-#### Users
+- /users [GET]      (index) (requires Admin Token)  
+- /users/id [GET]   (show) (token required)  
+- /users [POST]     (Create) (requires Admin Token)  
+- /users/register   (Create) (user role is always user)  
+- /users/login      (login by username and password)  (generate token)  
+#### Orders  
 
-- Index [token required] /users [GET]
-- Show (args: id)[token required] /users/id [GET]
-- Create (args: User)[token required] /users [POST]
+- /orders/current [GET]   Current Order by user (requires Admin Token)  
+- [OPTIONAL] Completed Orders by user (args: user id)[token required] /orders/completed [GET]  
+
+## Data Shapes  
+
+#### Product  
+
+- id  
+- name  
+- price  
+- [OPTIONAL] category   (exist and can be null)  
+
+#### User  
+
+- id  
+- username    (for authentication)  
+- firstName  
+- lastName  
+- password  
+- role (admin, user)  
 
 #### Orders
 
-- Current Order by user (args: user id)[token required] /orders/current [GET]
-- [OPTIONAL] Completed Orders by user (args: user id)[token required] /orders/completed [GET]
+- id  
+- id of each product in the order   (in order_products table)  
+- quantity of each product in the order   (in order_products table)  
+- user_id  
+- status of order (active or complete)  
 
-## Data Shapes
+#### order_products
 
-#### Product
-
-- id
-- name
-- price
-- [OPTIONAL] category
-
-#### User
-
-- id
-- firstName
-- lastName
-- password
-- role (admin, customer)
-
-#### Orders
-
-- id
-- id of each product in the order
-- quantity of each product in the order
-- user_id
-- status of order (active or complete)
-
-#### orders_products
-
-- id
-- order_id
-- product_id
-- quantity
+- id  
+- quantity  
+- order_id  
+- product_id  

@@ -27,7 +27,7 @@
   "php.validate.run": "onType",
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
-  "editor.detectIndentation": true,
+  "editor.detectIndentation": false,
   "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
   "javascript.format.enable": true,
   "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
@@ -40,10 +40,10 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "eslint.validate": ["javascript"],
   "[markdown]": {
-    "editor.wordWrap": "on",
+    "editor.wordWrap": "off",
     "editor.quickSuggestions": {
       "comments": "off",
       "strings": "off",
