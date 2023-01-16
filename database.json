@@ -20,7 +20,7 @@
             "ENV": "POSTGRES_HOST"
         },
         "database": {
-            "ENV": "POSTGRES_DB"
+            "ENV": "POSTGRES_TEST_DB"
         },
         "user": {
             "ENV": "POSTGRES_USER"

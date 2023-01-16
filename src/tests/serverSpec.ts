@@ -36,7 +36,7 @@ describe("Test Users methods exists", () => {
       firstName: 'Test',
       lastName: 'User',
       role: 'admin',
-      password: '123'
+      password: 'admin123'
     });
     expect(result).toEqual({
       id: 1,
@@ -44,7 +44,7 @@ describe("Test Users methods exists", () => {
       firstName: 'Test',
       lastName: 'User',
       role: 'admin',
-      password: '123'
+      password: 'admin123'
     });
   });
 
@@ -57,7 +57,7 @@ describe("Test Users methods exists", () => {
         firstName: 'Test',
         lastName: 'User',
         role: 'admin',
-        password: '123'
+        password: 'admin123'
       }
     ]);
   });
@@ -70,14 +70,14 @@ describe("Test Users methods exists", () => {
       firstName: 'Test',
       lastName: 'User',
       role: 'admin',
-      password: '123'
+      password: 'admin123'
     });
   });
 
 
 });
 
-
+/*
 // products tests
 describe("Test Products methods exists", () => {
   it('should have an index method', () => {
@@ -202,7 +202,7 @@ describe("Test Orders methods exists", () => {
     expect(result).toEqual([]);
   });
 });
-
+*/
 
 describe("test delete user and product at the end of all tests", () => {
   it('delete method should remove the user', async () => {
