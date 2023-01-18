@@ -49,8 +49,8 @@ userRoutes.post('/createFirstAdmin', async (req: Request, res: Response): Promis
   try {
     const user: User = {
       username: 'admin udacity',
-      firstName: 'admin',
-      lastName: 'udacity',
+      firstname: 'admin',
+      lastname: 'udacity',
       role: "admin",
       password: "123456"
     };
@@ -60,8 +60,8 @@ userRoutes.post('/createFirstAdmin', async (req: Request, res: Response): Promis
       {
         user: {
           username: newUser.username,
-          firstName: newUser.firstName,
-          lastName: newUser.lastName,
+          firstname: newUser.firstname,
+          lastname: newUser.lastname,
           role: newUser.role,
           id: newUser.id
         }
@@ -81,8 +81,8 @@ userRoutes.post(
     try {
       const user: User = {
         username: req.body.username,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
         role: "user",
         password: req.body.password
       };
@@ -92,8 +92,8 @@ userRoutes.post(
         {
           user: {
             username: newUser.username,
-            firstName: newUser.firstName,
-            lastName: newUser.lastName,
+            firstname: newUser.firstname,
+            lastname: newUser.lastname,
             role: newUser.role,
             id: newUser.id
           }
@@ -116,8 +116,8 @@ userRoutes.post(
     try {
       const user: User = {
         username: req.body.username,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
         role: req.body.role,
         password: req.body.password
       };
@@ -127,8 +127,8 @@ userRoutes.post(
         {
           user: {
             username: newUser.username,
-            firstName: newUser.firstName,
-            lastName: newUser.lastName,
+            firstname: newUser.firstname,
+            lastname: newUser.lastname,
             role: newUser.role,
             id: newUser.id
           }
@@ -157,8 +157,8 @@ userRoutes.post('/login', async (req: Request, res: Response): Promise<void> => 
         {
           user: {
             username: authenticated.username,
-            firstName: authenticated.firstName,
-            lastName: authenticated.lastName,
+            firstname: authenticated.firstname,
+            lastname: authenticated.lastname,
             role: authenticated.role,
             id: authenticated.id
           }

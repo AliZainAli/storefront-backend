@@ -9,8 +9,8 @@ const saltRounds = process.env.SALT_ROUNDS;
 export type User = {
   id?: number;
   username: string;
-  firstName?: string;
-  lastName?: string;
+  firstname?: string;
+  lastname?: string;
   role?: string;
   password: string;
 };
@@ -19,7 +19,7 @@ export class UserStore {
   async create(u: User): Promise<User> {
     try {
       const sql =
-        'INSERT INTO users (username, firstName, lastName, role, password) VALUES($1, $2, $3, $4, $5) RETURNING *';
+        'INSERT INTO users (username, firstname, lastname, role, password) VALUES($1, $2, $3, $4, $5) RETURNING *';
       const conn = await Client.connect();
       const hash: string = bcrypt.hashSync(
         u.password + pepper,
@@ -28,8 +28,8 @@ export class UserStore {
 
       const result = await conn.query(sql, [
         u.username,
-        u.firstName,
-        u.lastName,
+        u.firstname,
+        u.lastname,
         u.role,
         hash
       ]);

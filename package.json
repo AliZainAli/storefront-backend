@@ -7,7 +7,7 @@
     "start": "nodemon src/server.ts",
     "testdb-reset": "db-migrate reset --config ./database.json --e test",
     "testdb-up": "db-migrate --config ./database.json --e test up",
-    "test": "npm run testdb-reset && export ENV='test'|| set ENV='test'&& npm run testdb-up && jasmine-ts src/tests/**/*[sS]pec.ts && npm run testdb-reset",
+    "test": "npm run testdb-reset && export ENV=test|| set ENV=test&& npm run testdb-up && jasmine-ts src/tests/**/*[sS]pec.ts && npm run testdb-reset",
     "tsc": "tsc",
     "devdb-up": "db-migrate up --config ./database.json --e dev",
     "devdb-reset": "db-migrate reset --config ./database.json --e dev",

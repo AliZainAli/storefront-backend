@@ -1,10 +1,8 @@
 import supertest from 'supertest';
 import app from '../server';
-
 import { Product, ProductStore } from '../models/product';
 import { Order, OrderStore } from '../models/order';
 import { User, UserStore } from '../models/user';
-import { json } from 'body-parser';
 
 const req = supertest(app);
 
@@ -33,44 +31,44 @@ describe("Test Users methods exists", () => {
   it('create method should add a User', async () => {
     const result = await userStore.create({
       username: 'Test User',
-      firstName: 'Test',
-      lastName: 'User',
+      firstname: 'Test',
+      lastname: 'User',
       role: 'admin',
       password: 'admin123'
     });
-    expect(result).toEqual({
+    const {'password': pw, ...result2} = result ;
+    //console.dir(result2, {depth: null});
+    //console.dir(result, { depth: null });
+    expect(result2).toEqual({
       id: 1,
       username: 'Test User',
-      firstName: 'Test',
-      lastName: 'User',
-      role: 'admin',
-      password: 'admin123'
+      firstname: 'Test',
+      lastname: 'User',
+      role: 'admin'
     });
   });
 
   it('index method should return a list of Users', async () => {
     const result = await userStore.index();
-    expect(result).toEqual([
-      {
-        id: 1,
-        username: 'Test User',
-        firstName: 'Test',
-        lastName: 'User',
-        role: 'admin',
-        password: 'admin123'
-      }
-    ]);
+    const { password: pw, ...result2 } = result[0] as User;
+    expect(result2).toEqual({
+      id: 1,
+      username: 'Test User',
+      firstname: 'Test',
+      lastname: 'User',
+      role: 'admin'
+    });
   });
 
   it('show method should return the correct user', async () => {
     const result = await userStore.show(1);
-    expect(result).toEqual({
+    const { password: pw, ...result2 } = result as User;
+    expect(result2).toEqual({
       id: 1,
       username: 'Test User',
-      firstName: 'Test',
-      lastName: 'User',
-      role: 'admin',
-      password: 'admin123'
+      firstname: 'Test',
+      lastname: 'User',
+      role: 'admin'
     });
   });
 

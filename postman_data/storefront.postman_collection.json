@@ -26,7 +26,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"admin Ali\",\r\n    \"firstName\": \"admin\",\r\n    \"lastName\": \"Ali\",\r\n    \"password\": \"123456\",\r\n    \"role\": \"admin\"\r\n}",
+							"raw": "{\r\n    \"username\": \"admin Ali\",\r\n    \"firstname\": \"admin\",\r\n    \"lastname\": \"Ali\",\r\n    \"password\": \"123456\",\r\n    \"role\": \"admin\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -94,7 +94,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"admin Ali 2\",\r\n    \"firstName\": \"admin\",\r\n    \"lastName\": \"Ali\",\r\n    \"password\": \"123456\",\r\n    \"role\": \"admin\"\r\n}",
+							"raw": "{\r\n    \"username\": \"admin Ali 2\",\r\n    \"firstname\": \"admin\",\r\n    \"lastname\": \"Ali\",\r\n    \"password\": \"123456\",\r\n    \"role\": \"admin\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -162,7 +162,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"admin Ali\",\r\n    \"firstName\": \"admin\",\r\n    \"lastName\": \"Ali\",\r\n    \"password\": \"123456\",\r\n    \"role\": \"admin\"\r\n}",
+							"raw": "{\r\n    \"username\": \"admin Ali\",\r\n    \"firstname\": \"admin\",\r\n    \"lastname\": \"Ali\",\r\n    \"password\": \"123456\",\r\n    \"role\": \"admin\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

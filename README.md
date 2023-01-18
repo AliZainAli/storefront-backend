@@ -38,8 +38,8 @@
 
 - id  
 - username    (for authentication)  
-- firstName  
-- lastName  
+- firstname  
+- lastname  
 - password  
 - role (admin, user)  
 
