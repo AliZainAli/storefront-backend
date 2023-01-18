@@ -3,6 +3,11 @@
 - there is a folder postman_data which contains postman collection file which you can import and use directly.  
 - create environment in postman with a token variable (I import this variable in required requests).  
 - All data keys supplied in post requests are the same as tables column names.  
+
+# Environment Info:  
+- port: 3000
+- replace environment variables in .env file with your credentials
+
 ## API Endpoints  
 
 #### Products  

@@ -23,20 +23,32 @@ These are the notes from a meeting with the frontend developer that describe wha
 ## Data Shapes
 #### Product
 -  id
-- name
-- price
-- [OPTIONAL] category
+- name     -> integer
+- price    -> integer
+- quantity -> integer
+- [OPTIONAL] category -> string
 
-#### User
-- id
-- firstname
-- lastname
-- password
+#### User  
+
+- id  
+- username  -> string
+- firstname -> string  
+- lastname  -> string  
+- password  -> string  
+- role      -> (admin, user)  
 
 #### Orders
-- id
-- id of each product in the order
-- quantity of each product in the order
-- user_id
-- status of order (active or complete)
+
+- id  
+- id of each product in the order   (in order_products table)  
+- quantity of each product in the order   (in order_products table)  
+- user_id  
+- status of order (active or complete)  
+
+#### order_products
+
+- id  
+- quantity    -> integer  
+- order_id    -> integer    
+- product_id  -> integer    
 
