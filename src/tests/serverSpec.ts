@@ -3,6 +3,9 @@ import app from '../server';
 import { Product, ProductStore } from '../models/product';
 import { Order, OrderStore } from '../models/order';
 import { User, UserStore } from '../models/user';
+import orderRoutes from '../routes/orders';
+import productRoutes from '../routes/products';
+import userRoutes from '../routes/users';
 
 const req = supertest(app);
 
@@ -75,7 +78,6 @@ describe("Test Users methods exists", () => {
 
 });
 
-
 // products tests
 describe("Test Products methods exists", () => {
   it('should have an index method', () => {
@@ -134,6 +136,8 @@ describe("Test Products methods exists", () => {
     });
   });
 });
+
+
 
 
 // orders tests
@@ -196,6 +200,87 @@ describe("Test Orders methods exists", () => {
     await orderStore.delete(1);
     const result = await orderStore.index(1);
     expect(result).toEqual([]);
+  });
+});
+
+// user routes test
+describe("Test Users Routes", () => {
+  it('get all users', () => {
+    expect(userRoutes.get('/')).toBeDefined();
+  });
+
+  it('get user by id', () => {
+    expect(userRoutes.get('/:id')).toBeDefined();
+  });
+
+  it('create route', () => {
+    expect(userRoutes.post('/regsiter')).toBeDefined();
+  });
+
+  it('create route', () => {
+    expect(userRoutes.post('/')).toBeDefined();
+  });
+
+  it('login route', () => {
+    expect(userRoutes.post('/login')).toBeDefined();
+  });
+
+  it('create user route', () => {
+    expect(userRoutes.post('/')).toBeDefined();
+  });
+
+  it('delete user route', () => {
+    expect(userRoutes.delete('/:id')).toBeDefined();
+  });
+});
+
+// product routes test
+describe("Test Products Routes", () => {
+  it('get all products', () => {
+    expect(productRoutes.get('/')).toBeDefined();
+  });
+
+  it('get product by id', () => {
+    expect(productRoutes.get('/:id')).toBeDefined();
+  });
+
+  it('create product route', () => {
+    expect(productRoutes.post('/')).toBeDefined();
+  });
+
+  it('update product route', () => {
+    expect(productRoutes.patch('/:id')).toBeDefined();
+  });
+
+  it('delete product route', () => {
+    expect(productRoutes.delete('/:id')).toBeDefined();
+  });
+});
+
+// order routes test
+describe("Test Orders Routes", () => {
+  it('get all orders', () => {
+    expect(orderRoutes.get('/all')).toBeDefined();
+  });
+
+  it('get order by id', () => {
+    expect(orderRoutes.get('/:id')).toBeDefined();
+  });
+
+  it('create order route', () => {
+    expect(orderRoutes.post('/')).toBeDefined();
+  });
+
+  it('add product route', () => {
+    expect(orderRoutes.post('/:id/products')).toBeDefined();
+  });
+
+  it('update order route', () => {
+    expect(orderRoutes.patch('/:id')).toBeDefined();
+  });
+
+  it('delete order route', () => {
+    expect(orderRoutes.delete('/:id')).toBeDefined();
   });
 });
 

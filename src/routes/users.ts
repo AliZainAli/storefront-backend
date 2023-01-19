@@ -176,6 +176,8 @@ userRoutes.post('/login', async (req: Request, res: Response): Promise<void> => 
 //delete a resouce
 userRoutes.delete(
   '/:id',
+  requiresAuthentication,
+  requiresAdmin,
   async (req: Request, res: Response): Promise<void> => {
     const id: number = parseInt(req.params.id as string);
     if (id) {

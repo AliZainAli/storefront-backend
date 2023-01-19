@@ -107,19 +107,6 @@ productRoutes.delete(
 );
 
 
-
-/*
-const productRoutes = (app: express.Application) => {
-  app.get('/products', index);
-  app.get('/products/:id', show);
-  app.post('/products', create);
-  app.delete('/products', destroy);
-  // add product
-  //app.post('/products/:id/products', addProduct);
-};
-*/
-
-
 const index = async (req: Request, res: Response): Promise<void> => {
   try {
     let products: Product[] = await productStore.index();

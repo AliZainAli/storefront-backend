@@ -14,7 +14,7 @@
   CREATE DATABASE store_test;  
 
 - create your own .env file in project roolt directory and add the following variables to it:  
-  POSTGRES_HOST=127.0.0.1  <default value>
+  POSTGRES_HOST=127.0.0.1  <default value>  
   POSTGRES_DB=store  
   POSTGRES_TEST_DB=store_test  
   POSTGRES_USER=postgres  
@@ -40,6 +40,7 @@
 - /users  [GET]      (index) (requires Admin Token)  
 - /users/id  [GET]   (show) (token required)  
 - /users  [POST]     (Create) (requires Admin Token)
+- /users/id  [DELETE]   (delete) (requires Admin Token)
 - /users/register   (Create) (user role is always user)  
 - /users/login      (login by username and password)  (generate token)  
 #### Orders  
