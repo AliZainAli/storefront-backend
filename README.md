@@ -5,8 +5,24 @@
 - All data keys supplied in post requests are the same as tables column names.  
 
 # Environment Info:  
-- port: 3000
-- replace environment variables in .env file with your credentials
+- port used: 3000  
+
+- open postgres terminal with default user postgres  
+
+- create 2 databases you can choose any names:  
+  CREATE DATABASE store;  
+  CREATE DATABASE store_test;  
+
+- create your own .env file in project roolt directory and add the following variables to it:  
+  POSTGRES_HOST=127.0.0.1  <default value>
+  POSTGRES_DB=store  
+  POSTGRES_TEST_DB=store_test  
+  POSTGRES_USER=postgres  
+  POSTGRES_PASSWORD=<postgres-password>  
+  ENV=dev  
+  BCRYPT_PASSWORD=<any-string>  
+  SALT_ROUNDS=10  
+  TOKEN_SECRET=<any-string>  
 
 ## API Endpoints  
 

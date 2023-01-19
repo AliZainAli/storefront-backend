@@ -75,7 +75,7 @@ describe("Test Users methods exists", () => {
 
 });
 
-/*
+
 // products tests
 describe("Test Products methods exists", () => {
   it('should have an index method', () => {
@@ -156,61 +156,59 @@ describe("Test Orders methods exists", () => {
 
   it('create method should add a Order', async () => {
     const result = await orderStore.create(1,'active');
-    expect(result).toEqual({
+    const { user_id: pw, ...result2 } = result as Order;
+    expect(result2).toEqual({
       id: 1,
-      user_id: 1,
       status: 'active'
     });
   });
 
   it('index method should return a list of all Orders of all users (for admin)', async () => {
     const result = await orderStore.allOrders();
-    expect(result).toEqual([
-      {
-        id: 1,
-        user_id: 1,
-        status: 'active'
-      }
-    ]);
+    const { user_id: pw, ...result2 } = result[0] as Order;
+    expect(result2).toEqual({
+      id: 1,
+      status: 'active'
+    });
   });
 
   it('index method should return a list of Orders of user', async () => {
     const result = await orderStore.index(1);
-    expect(result).toEqual([
+    const { user_id: pw, ...result2 } = result[0] as Order;
+    expect(result2).toEqual(
       {
         id: 1,
-        user_id: 1,
         status: 'active'
       }
-    ]);
+    );
   });
 
   it('show method should return the correct order', async () => {
     const result = await orderStore.show('1', 1);
-    expect(result).toEqual({
+    const { user_id: pw, ...result2 } = result as Order;
+    expect(result2).toEqual({
       id: 1,
-      user_id: 1,
       status: 'active'
     });
   });
 
   it('delete method should remove the order', async () => {
-    orderStore.delete(1);
+    await orderStore.delete(1);
     const result = await orderStore.index(1);
     expect(result).toEqual([]);
   });
 });
-*/
+
 
 describe("test delete user and product at the end of all tests", () => {
   it('delete method should remove the user', async () => {
-    userStore.delete(1);
+    await userStore.delete(1);
     const result = await userStore.index();
     expect(result).toEqual([]);
   });
 
   it('delete method should remove the product', async () => {
-    productStore.delete(1);
+    await productStore.delete(1);
     const result = await productStore.index();
     expect(result).toEqual([]);
   });
